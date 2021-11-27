@@ -14,7 +14,7 @@ function Home(){
                     
                     <div className="play-button-container">
                         <ul>
-                            <li><Link className="play-button" to="/play/instructions">Play</Link></li>
+                            <li><Link className="play-button" to="/play/create">Crear Quiz</Link></li>
                         </ul>
                     </div>
                     <div className="auth-container" >
