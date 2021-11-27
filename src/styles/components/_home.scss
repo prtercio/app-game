@@ -1,0 +1,101 @@
+#home {
+    //background-image: url('../../assets/img/background.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: space-around;
+    height: 90vh;
+    width: 210vh;
+
+    section {
+        background-color: rgba($color: #2c2a2a, $alpha: 0.6);
+        padding-left: $md;
+        padding-right: $md;
+        margin-top: $lg;
+        height: 80%;
+        width: 35%;
+    }
+
+    .cube {
+        font-size: 8rem;
+        color: $orange;
+    }
+
+    h1 {
+        font-size: $lg;
+        font-weight: 700;
+        text-align: center;
+        color: $off-white;
+    }
+
+    .play-button-container {
+        width: 100%;
+    }
+
+    a.play-button {
+        background-color: $green;
+        border-radius: $button-radius;
+        color: #fff;
+        display: block;
+        cursor: pointer;
+        padding: $normal;
+        text-align: center;
+        transition: 0.3s linear all;
+        box-shadow: $shadow;
+        
+    }
+
+    a.play-button:hover {
+        background-color: darken($green, 10%);
+    }
+
+    .auth-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        margin-top: $lg;
+    }
+
+    #login-button {
+        background-color:$red;
+        box-shadow: $shadow;
+    }
+
+    #login-button:hover {
+        background-color: darken($red, 10%);
+    }
+
+    #sing-button {
+        background-color: $blue;
+        box-shadow: $shadow;
+    }
+
+    #sing-button:hover {
+        background-color: darken($blue, 10%);
+    }
+
+    .auth-container .auth-buttons {
+        color: #fff;
+        cursor: pointer;
+        border-radius: $button-radius;
+        padding: $normal 0;
+        text-align: center;
+        transition: 0.3s linear all;
+        width: 45%;
+    }
+    
+}
+
+@media only screen and (min-width: 600px) {
+    #home section {
+        padding: 0 $normal;
+    }
+}
+
+@media only screen and (orientation: portrait) {
+    #home section {
+        padding: 0 $normal;
+        width: 100%;
+        height: 100%;
+    }
+  }

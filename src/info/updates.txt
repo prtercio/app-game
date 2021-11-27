@@ -1,0 +1,18 @@
+creando o projeto:
+    -> npx create-react-app .
+    ... o ponto no final é pra instalar tudo dentro da pasta atual
+
+-> instalando o "useRoutes" para os links
+    -> yarn add react-router-dom
+
+-> plugin para renomear a abas
+    -> yarn add react-helmet
+
+-> instalar SASS para os estilos
+    ->yarn add sass
+
+-> instalar materialize
+    -> npm install materialize-css@next
+
+-> instalar o icons de materialize
+    ->npm install @mdi/font    
