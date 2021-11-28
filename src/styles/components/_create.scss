@@ -1,0 +1,14 @@
+.inicio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+    padding: 30px;
+}
+  
+ .inicio .card {
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+  }

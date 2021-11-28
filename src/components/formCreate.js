@@ -1,17 +1,17 @@
 import { useState, useEffect } from "react";
 
 const initialDorm = {
-    name:"",
-    estado:"",
-    id:null
+    name: "",
+    senha: "",
+    contacto_id: 16,
+    game_tipo_id: 1
+
 }
-
-
-
 function FormCreate({createData}){
     const [form, setForm] = useState(initialDorm);
 
     const handlerChange = (e) => {
+        
         setForm({
             ...form,
             [e.target.name]:e.target.value,
@@ -19,7 +19,8 @@ function FormCreate({createData}){
     }
     const handlerSubmit = (e) => {
         e.preventDefault();
-        if(!form.name || !form.estado){
+        form.senha = cadenaAleatoria();
+        if(!form.name || !form.senha){
             alert("Hay campos vacios!")
             return;
         }
@@ -30,16 +31,20 @@ function FormCreate({createData}){
     const handlerReset = (e) => {
         setForm(initialDorm);
     }
+
+    const cadenaAleatoria = () => {
+        return '_' + Math.random().toString(36).substr(2, 9);
+    };
+
     return(
         <>
-            <div>
+            
             <form onSubmit={handlerSubmit}>
-            <input type="text" name="name" placeholder="Nombre" onChange={handlerChange} value={form.name}/>
-                <input type="text" name="estado" placeholder="Estado" onChange={handlerChange} value={form.estado}/>
+                <input type="text" name="name" placeholder="Nombre" onChange={handlerChange} value={form.name}/>
                 <input type="submit" value="Enviar"/>
                 <input type="reset" value="Limpiar" onClick={handlerReset}/>
             </form>
-            </div>
+  
         </>
     )
 }
