@@ -32,7 +32,6 @@ function GameCreate (){
                 console.log(res);
                setDb([db, res]);
                setId(res.senha);
-               console.log(id)
                setLoading(false);
             } else {
               setError(res);
@@ -53,7 +52,7 @@ function GameCreate (){
                     {db.length === undefined && 
                         <div>
                             <h4>Crear Sesión</h4>
-                            <FormCreate createData={createData}/>                            
+                            <FormCreate createData={createData}/>                                  
                         </div>
                     }
                     {loading && <Loader />}
@@ -69,7 +68,8 @@ function GameCreate (){
                             </div>
                             <div> 
                                 <button onClick={volverCrear}>Volver a crear</button>
-                               <li><Link to={`/play/inicioPreguntas/${id}`} className="play-button" >Iniciar Preguntas</Link></li>
+                               <li><Link to={`/admin/admin/${id}`} className="play-button" >Configuración</Link></li>
+                               
                             </div>     
                         </div>
                     }

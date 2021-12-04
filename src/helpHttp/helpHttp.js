@@ -1,7 +1,7 @@
 export const helpHttp = () => {
-    const customFetch = (endpoint, options) => {
+    const customFetch = async (endpoint, options) => {
       const defaultHeader = {
-        Accept: "application/json; charset=UTF-8"
+        Accept: "application/json"
       };
   
       const controller = new AbortController();
@@ -18,9 +18,9 @@ export const helpHttp = () => {
       //console.log(options);
       setTimeout(() => controller.abort(), 3000);
   
-      return fetch(endpoint, options)
-        .then((res) =>
-          res.ok
+      return await fetch(endpoint, options)
+        .then((res) =>          
+         res.ok 
             ? res.json()
             : Promise.reject({
                 err: true,
@@ -28,12 +28,14 @@ export const helpHttp = () => {
                 statusText: res.statusText || "Ocurrió un error",
               })
         )
-        .catch((err) => err);
+        .catch((err) => {
+
+        });
     };
   
     const get = (url, options = {}) => customFetch(url, options);
   
-    const post = (url, options = {}) => {
+    const post =  (url, options = {}) => {
       options.method = "POST";
       return customFetch(url, options);
     };
